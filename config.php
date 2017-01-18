@@ -1,0 +1,9 @@
+<?php
+error_reporting(E_ALL^E_NOTICE^E_WARNING^E_DEPRECATED);
+define('SQL_ADDRESS','localhost');
+define('SQL_DATABASE','test');
+define('SQL_USERNAME','test');
+define('SQL_PASSWORD','test');
+define('SQL_TABLE','score');
+define('ID_Length',9);
+?>
