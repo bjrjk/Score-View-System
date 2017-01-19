@@ -5,5 +5,4 @@ if(trim($_SESSION["username"])==""&&$_SERVER['PHP_SELF']!='/admin/login.php'){
 }
 ?>
 </div>
-</body>
 </html>
