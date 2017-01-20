@@ -6,6 +6,8 @@ require_once("header.php");
 <br/>
 <a href="view-score.php" target="main">浏览成绩</a>
 <br/>
+<a href="customed-score.php" target="main">自定义查询</a>
+<br/>
 <a href="test.php" target="main">考试配置</a>
 <br/>
 <a href="logout.php" target="main">登出</a>
