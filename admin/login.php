@@ -7,8 +7,9 @@ if(isset($_POST['username'])&&isset($_POST['password'])){
 	$password=md5($_POST['password']);
 	$sql="select * from user where `username`='$username' and `password`='$password'";
 	$result = mysql_query($sql,$conn);
-	if(mysql_fetch_array($result)){
+	if($row=mysql_fetch_array($result)){
 		$_SESSION['username']=$username;
+		$_SESSION['role']=$row['Role'];
 		$success=true;
 		header("Location:/admin/index.php");
 	}else{
