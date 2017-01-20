@@ -21,6 +21,8 @@ if(isset($_POST['Name'])&&isset($_POST['Table_Name'])&&isset($_POST['Settings'])
 		$sql="INSERT INTO `score_table_list` (`Name`, `Table_Name`, `Settings`) VALUES ('$Name', '$TN', '$Settings');";
 		$msg="新建考试配置成功！";
 		mysql_query($sql,$conn);
+		$sql="create table $TN;";
+		mysql_query($sql,$conn);
 	}
 }elseif(isset($_GET['ID'])){//view test
 	$ID=$_GET['ID'];

@@ -20,6 +20,8 @@ if($_SESSION['role']=='administrator'){
 <br/>
 <a href="test.php" target="main">考试配置</a>
 <br/>
+<a href="table.php" target="main">考试数据表管理</a>
+<br/>
 <a href="user.php" target="main">用户管理</a>
 <br/>
 <?php
