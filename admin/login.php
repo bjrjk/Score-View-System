@@ -33,8 +33,10 @@ if(isset($_POST['username'])&&isset($_POST['password'])){
   <div class="form-group" align="center">
     <button type="submit" class="btn btn-default">登录</button>
   </div>
+  <a href="/" class="btn btn-primary">返回至首页</a>
  </div>
 </form>
+
 <?php
 require_once("footer.php");
 ?>
