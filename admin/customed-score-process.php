@@ -4,6 +4,8 @@ require_once("header.php");
 <h2>成绩查询系统——自定义查询</h2>
 <?php
 if(isset($_POST['Test'])&&isset($_POST['sql'])){
+		
+		echo "<p>您的sql语句是：".$_POST['sql']."</p>";
 		$Test=mysql_real_escape_string($_POST['Test']);
 		$sql="select * from score_table_list where `ID`='$Test';";
 		$result = mysql_query($sql,$conn);
