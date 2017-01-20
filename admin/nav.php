@@ -27,6 +27,8 @@ if($_SESSION['role']=='administrator'){
 <?php
 }
 ?>
+<a href="reset-pass.php" target="main">修改密码</a>
+<br/>
 <a href="logout.php" target="_top" >登出</a>
 </strong>
 <?php
