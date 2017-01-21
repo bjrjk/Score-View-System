@@ -29,6 +29,7 @@ while($row=mysql_fetch_array($result)){
 <br/><br/>
 <input type="submit" value="提交" class="btn btn-default"/>
 </form>
+<a href="/invite.php" class="btn btn-primary">Invite Area</a>
 </div>
 <?php
 require_once("footer.php");
