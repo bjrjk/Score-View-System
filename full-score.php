@@ -19,7 +19,11 @@ function check_num($num,$cnt){
 	}
 }
 function check($code){
-	$num=intval($code);
+	$arr=explode('-',$code);
+	$num=0;
+	foreach ($arr as $str){
+		$num+=intval($str);
+	}
 	if($num%2==0){
 		return false;
 	}
@@ -28,7 +32,16 @@ function check($code){
 	}else{
 		return false;
 	}
+	
 }
+if(!isset($_POST['captcha'])||strtolower($_POST['captcha'])!=$_SESSION['captcha']||$_SESSION['captcha_used']){
+	echo "验证码输入错误！";
+	$_SESSION['captcha_used']=true;
+	echo "<button class=\"btn btn-default \" onclick=\"goback()\">返回</button>";
+	require_once("footer.php");
+	exit();
+}
+$_SESSION['captcha_used']=true;
 if(!isset($_POST['code'])||(isset($_POST['code'])&&!check($_POST['code']))){
 	echo "您的来路不正确，请重新回到首页查询！<br/>";
 	echo "<button class=\"btn btn-default \" onclick=\"goback()\">返回</button>";

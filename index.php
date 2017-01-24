@@ -20,13 +20,18 @@ while($row=mysql_fetch_array($result)){
 }
 ?>
 </select>
-<br/><br/>
+<br/>
 <p>准考证号：</p>
 <input type="text" name="ID" value="" class="form-control" maxlength="<?php echo $row_ID['Value']; ?>"/>
-<br/><br/>
+<br/>
 <p>姓名：</p>
 <input type="text" name="Name" class="form-control" value="" maxlength="64" class="text"/>
-<br/><br/>
+<br/>
+<p>验证码：</p>
+<input type="text" name="captcha" class="form-control" value="" maxlength="4" class="text"/>
+<br/>
+<img title="点击刷新" src="captcha.php" align="absbottom" onclick="this.src='captcha.php?'+Math.random();"></img>
+<br /><br />
 <input type="submit" value="提交" class="btn btn-default"/>
 </form>
 <a href="/invite.php" class="btn btn-primary">Invite Area</a>

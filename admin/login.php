@@ -2,7 +2,15 @@
 require_once("header.php");
 $msg="";
 $success=false;
-if(isset($_POST['username'])&&isset($_POST['password'])){
+$captcha=false;
+if(!isset($_POST['captcha'])||strtolower($_POST['captcha'])!=$_SESSION['captcha']||$_SESSION['captcha_used']){
+	$msg="验证码输入错误！";
+	$captcha=false;
+}else{
+	$captcha=true;
+}
+$_SESSION['captcha_used']=true;
+if(isset($_POST['username'])&&isset($_POST['password'])&&$captcha){
 	$username=mysql_real_escape_string($_POST['username']);
 	$password=md5($_POST['password']);
 	$sql="select * from user where `username`='$username' and `password`='$password'";
@@ -29,7 +37,13 @@ if(isset($_POST['username'])&&isset($_POST['password'])){
     <label class="control-label">密码</label>
     <input type="password" class="form-control" name="password" placeholder="请输入密码" maxlength="64">
     </div>
+	<div class="form-group">
+	<label class="control-label">验证码</label>
+	<input type="text" name="captcha" class="form-control" value="" placeholder="请输入验证码" maxlength="4"/>
+</div>
+<img title="点击刷新" src="/captcha.php" align="absbottom" onclick="this.src='/captcha.php?'+Math.random();"></img>
   </div>
+  
   <div class="form-group" align="center">
     <button type="submit" class="btn btn-default">登录</button>
   </div>
