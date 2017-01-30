@@ -1,5 +1,5 @@
 <?php
-require_once("header.php");
+require_once("admin-header.php");
 ?>
 <h2>考试配置</h2>
 <table class="table table-bordered">

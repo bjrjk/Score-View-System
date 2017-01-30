@@ -1,5 +1,5 @@
 <?php
-require_once("header.php");
+require_once("admin-header.php");
 ?>
 <h2>成绩查询系统——自定义查询</h2>
 <?php

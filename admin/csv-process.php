@@ -1,5 +1,5 @@
 <?php
-require_once("header.php");
+require_once("admin-header.php");
 function endWith($haystack, $needle) {  
       $length = strlen($needle);  
       if($length == 0)

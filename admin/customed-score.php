@@ -1,5 +1,5 @@
 <?php
-require_once("header.php");
+require_once("admin-header.php");
 $sql="select * from score_table_list;";
 $result=mysql_query($sql,$conn);
 ?>

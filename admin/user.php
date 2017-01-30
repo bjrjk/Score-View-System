@@ -1,5 +1,5 @@
 <?php
-require_once("header.php");
+require_once("admin-header.php");
 ?>
 <h2>用户管理</h2>
 <table class="table table-bordered">

@@ -1,5 +1,5 @@
 <?php
-require_once("header.php");
+require_once("admin-header.php");
 if(isset($_GET['ID'])){
 	$ID=$_GET['ID'];
 	if($ID!=1){
