@@ -11,17 +11,19 @@ session_start();
 <script src="//upcdn.b0.upaiyun.com/libs/jquery/jquery-2.0.3.min.js"></script>
 <script type="text/javascript">
         $(document).ready(function() {
-    		$("body").on("contextmenu",function(e){
-				return false;
-    	    }); 
+			if(window.document.location.pathname!="/invite.php"){
+				$("body").on("contextmenu",function(e){
+					return false;
+				}); 
+			}
 		}); 
         $(document).keydown(function(event){
-    		if(event.keyCode==123){
-    			return false;
-   		}
-		else if(event.ctrlKey && event.shiftKey && event.keyCode==73){        
-      			return false;  
-   		}
+				if(event.keyCode==123){
+					return false;
+				}
+				else if(event.ctrlKey && event.shiftKey && event.keyCode==73){        
+					return false;  
+				}
 		});
 </script>
 <script language="javascript" type="text/javascript">

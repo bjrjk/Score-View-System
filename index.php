@@ -1,6 +1,6 @@
 <?php
 require_once("header.php");
-$sql="select * from score_table_list;";
+$sql="select * from score_table_list order by ID DESC;";
 $result=mysql_query($sql,$conn);
 $sql2="select * from settings where `Name`='ID_Length';";
 $result_2=mysql_query($sql2,$conn);
