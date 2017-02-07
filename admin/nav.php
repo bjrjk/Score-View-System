@@ -18,6 +18,8 @@ if($_SESSION['role']=='administrator'){
 ?>
 <a href="customed-score.php" target="main">自定义查询</a>
 <br/>
+<a href="generate-code.php" target="main">邀请码生成</a>
+<br/>
 <a href="test.php" target="main">考试配置</a>
 <br/>
 <a href="table.php" target="main">考试数据表管理</a>
@@ -33,4 +35,4 @@ if($_SESSION['role']=='administrator'){
 </strong>
 <?php
 require_once("footer.php");
-?>
+
