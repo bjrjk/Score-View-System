@@ -9,30 +9,30 @@ echo "\n</strong><br/>";
 ?>
 <br/><br/>
 <strong>
-<a href="main.php" target="main">主页</a>
+<a href="?action=main">主页</a>
 <br/>
-<a href="view-score.php" target="main">浏览成绩</a>
+<a href="?action=view-score">浏览成绩</a>
 <br/>
 <?php
 if($_SESSION['role']=='administrator'){
 ?>
-<a href="customed-score.php" target="main">自定义查询</a>
+<a href="?action=customed-score">自定义查询</a>
 <br/>
-<a href="generate-code.php" target="main">邀请码生成</a>
+<a href="?action=generate-code">邀请码生成</a>
 <br/>
-<a href="test.php" target="main">考试配置</a>
+<a href="?action=test">考试配置</a>
 <br/>
-<a href="table.php" target="main">考试数据表管理</a>
+<a href="?action=table">考试数据表管理</a>
 <br/>
-<a href="user.php" target="main">用户管理</a>
+<a href="?action=user">用户管理</a>
 <br/>
 <?php
 }
 ?>
-<a href="reset-pass.php" target="main">修改密码</a>
+<a href="?action=reset-pass">修改密码</a>
 <br/>
-<a href="logout.php" target="_top" >登出</a>
+<a href="?action=logout">登出</a>
 </strong>
 <?php
 require_once("footer.php");
-
+?>

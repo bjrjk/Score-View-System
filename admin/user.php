@@ -20,12 +20,12 @@ while($row=mysql_fetch_array($result)){
 	$Username=$row['Username'];
 	$Role=$row['Role'];
 	$DELETE="删除";
-	echo "<tr><td>$ID</td><td>$Username</td><td>$Role</td><td><a href=\"delete-user.php?ID=$ID\" class=\"btn btn-primary\">$DELETE</a></td></tr>";
+	echo "<tr><td>$ID</td><td>$Username</td><td>$Role</td><td><a href=\"?action=delete-user&ID=$ID\" class=\"btn btn-primary\">$DELETE</a></td></tr>";
 }
 ?>
 </tbody>
 </table>
-<a href="register.php" class="btn btn-primary">新建用户</a>
+<a href="?action=register" class="btn btn-primary">新建用户</a>
 <?php
 require_once("footer.php");
 ?>

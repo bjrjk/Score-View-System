@@ -22,7 +22,7 @@ while($row=mysql_fetch_array($result)){
 	$TN=$row['Table_Name'];
 	$Settings=$row['Settings'];
 	$EDIT="导入CSV";
-	echo "<tr><td>$ID</td><td>$Name</td><td>$TN</td><td>$Settings</td><td><a href=\"import-csv.php?ID=$ID\" class=\"btn btn-primary\">$EDIT</a></td></tr>";
+	echo "<tr><td>$ID</td><td>$Name</td><td>$TN</td><td>$Settings</td><td><a href=\"?action=import-csv&ID=$ID\" class=\"btn btn-primary\">$EDIT</a></td></tr>";
 }
 ?>
 </tbody>

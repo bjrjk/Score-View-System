@@ -6,7 +6,7 @@ $result=mysql_query($sql,$conn);
 <h2>成绩查询系统——自定义查询</h2>
 <br/>
 <div align="center" style="width:50%">
-<form method="post" action="customed-score-process.php" role="form">
+<form method="post" action="?action=customed-score-process" role="form">
 <p>考试场次：</p>
 <select name="Test" class="form-control">
 <?php
