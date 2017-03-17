@@ -32,5 +32,5 @@ function goback(){
 }
 </script> 
 </head>
-<body>
+<body oncopy="return false;" oncut="return false;" >
 <div id="content" align="center">
