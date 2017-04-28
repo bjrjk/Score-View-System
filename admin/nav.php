@@ -16,6 +16,8 @@ echo "\n</strong><br/>";
 <?php
 if($_SESSION['role']=='administrator'){
 ?>
+<a href="?action=news">新闻管理</a>
+<br/>
 <a href="?action=customed-score">自定义查询</a>
 <br/>
 <a href="?action=generate-code">邀请码生成</a>

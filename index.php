@@ -7,6 +7,16 @@ $result_2=mysql_query($sql2,$conn);
 $row_ID=mysql_fetch_array($result_2);
 ?>
 <h2>成绩查询系统</h2>
+<div align="center" style="width:40%">
+<h3>最新通知：</h3>
+<?php
+$sql_news="select Value from settings where Name='News'";
+$result_news=mysql_query($sql_news,$conn);
+if($row=mysql_fetch_array($result_news)){
+		echo $row['Value'];
+}
+?>
+</div>
 <br/>
 <div align="center" style="width:30%">
 <form method="post" action="score.php" role="form">

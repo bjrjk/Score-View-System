@@ -9,9 +9,19 @@ function endWith($haystack, $needle) {
       return (substr($haystack, -$length) === $needle);
  }
 function execute_SQL($sql,$conn){
-	return mysql_query($sql,$conn);
+	try{
+		return mysql_query($sql,$conn);
+	}
+	catch(Exception $e){
+		echo 'Message: ' .$e->getMessage();
+	}
+}
+function drop_table($TN,$conn){
+	$sql="drop table $TN;";
+	execute_SQL($sql,$conn);
 }
 function import_CSV($TN,$Settings,$CSV_path,$conn){
+	try{
 	$setting_array=json_decode($Settings,true);
 	$sql_setup="CREATE TABLE $TN ( ";
 	$flag=false;
@@ -38,6 +48,9 @@ function import_CSV($TN,$Settings,$CSV_path,$conn){
 					$temp_str.=' , ';
 				}
 				$t=$data[$i];
+				if(trim($t)==''){
+					$t='0';
+				}
 				$temp_str.="'$t'";
 			}
 			$temp_str.=' );';
@@ -47,6 +60,11 @@ function import_CSV($TN,$Settings,$CSV_path,$conn){
 		return false;
 	}
 	return true;
+	}
+	catch(Exception $e)
+	{
+		echo 'Message: ' .$e->getMessage();
+	}
 } 
 $success=false;
 if(isset($_POST['ID'])&&isset($_FILES['csv'])){
@@ -60,6 +78,7 @@ if(isset($_POST['ID'])&&isset($_FILES['csv'])){
 			$TN=$row['Table_Name'];
 			$Settings=$row['Settings'];
 			//$TN,$Settings,$CSV_path
+			drop_table($TN,$conn);
 			if(import_CSV($TN,$Settings,$CSV_path,$conn)){
 				$success=true;
 				$msg="导入CSV文件成功！";
