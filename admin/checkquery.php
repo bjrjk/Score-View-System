@@ -1,0 +1,41 @@
+<?php
+require_once("admin-header.php");
+?>
+<h2>查看前台查询记录</h2>
+<h5>仅展示前50条</h5>
+<table class="table table-bordered">
+<thead>
+<tr>
+<td>ID</td>
+<td>Unix时间戳</td>
+<td>IP</td>
+<td>UserAgent</td>
+<td>考试场次</td>
+<td>准考证号</td>
+<td>姓名</td>
+<td>验证码</td>
+<td>结果</td>
+</tr>
+</thead>
+<tbody>
+<?php
+$sql="select * from querylist order by ID desc limit 50;";
+$result=mysql_query($sql,$conn);
+while($row=mysql_fetch_array($result)){
+	$ID=$row['ID'];
+	$Time=$row['Time'];
+	$IP=$row['IP'];
+	$UA=$row['UserAgent'];
+	$ExamNo=$row['ExamNo'];
+	$ExamID=$row['ExamID'];
+	$Name=$row['Name'];
+	$Captcha=$row['Captcha'];
+	$Result=$row['Result'];
+	echo "<tr><td>$ID</td><td>$Time</td><td>$IP</td><td>$UA</td><td>$ExamNo</td><td>$ExamID</td><td>$Name</td><td>$Captcha</td><td>$Result</td></tr>";
+}
+?>
+</tbody>
+</table>
+<?php
+require_once("footer.php");
+?>

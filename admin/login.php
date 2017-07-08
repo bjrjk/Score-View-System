@@ -50,9 +50,12 @@ if(isset($_POST['username'])&&isset($_POST['password'])&&$captcha){
 	$sql="select * from user where `username`='$username' and `password`='$password'";
 	$result = mysql_query($sql,$conn);
 	if($row=mysql_fetch_array($result)){
+		$ID=$row['ID'];
 		$_SESSION['username']=$username;
 		$_SESSION['role']=$row['Role'];
 		$success=true;
+		$sql_login="UPDATE `user` SET `LastLoginTime` = CURRENT_TIMESTAMP WHERE `user`.`ID` = '$ID'";
+		mysql_query($sql_login,$conn);
 		header("Location:/admin/index.php");
 	}else{
 		$msg="用户名或密码错误，请重试！";

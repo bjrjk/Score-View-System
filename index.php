@@ -34,9 +34,9 @@ while($row=mysql_fetch_array($result)){
 </select>
 <br/>
 <p>准考证号：</p>
-<input type="text" name="ID" value="" class="form-control" <?php echo $flag?"":"disabled=\"\"" ?> maxlength="<?php echo $row_ID['Value']; ?>"/>
+<input type="text" name="ID" onkeyup="this.value=this.value.replace(/\D/g,'')" value="" class="form-control" <?php echo $flag?"":"disabled=\"\"" ?> maxlength="<?php echo $row_ID['Value']; ?>"/>
 <br/>
-<p>姓名：</p>
+<p>姓名：（要求精确匹配）</p>
 <input type="text" name="Name" class="form-control" <?php echo $flag?"":"disabled=\"\"" ?>  value="" maxlength="64" class="text"/>
 <br/>
 <p>验证码：</p>

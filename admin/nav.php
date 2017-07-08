@@ -28,6 +28,8 @@ if($_SESSION['role']=='administrator'){
 <br/>
 <a href="?action=user">用户管理</a>
 <br/>
+<a href="?action=checkquery">查看前台查询记录</a>
+<br/>
 <?php
 }
 ?>

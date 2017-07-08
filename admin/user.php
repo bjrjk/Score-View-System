@@ -8,6 +8,7 @@ require_once("admin-header.php");
 <td>ID</td>
 <td>用户名</td>
 <td>权限</td>
+<td>上次登录时间</td>
 <td>操作</td>
 </tr>
 </thead>
@@ -19,8 +20,9 @@ while($row=mysql_fetch_array($result)){
 	$ID=$row['ID'];
 	$Username=$row['Username'];
 	$Role=$row['Role'];
+	$LastLoginTime=$row['LastLoginTime'];
 	$DELETE="删除";
-	echo "<tr><td>$ID</td><td>$Username</td><td>$Role</td><td><a href=\"?action=delete-user&ID=$ID\" class=\"btn btn-primary\">$DELETE</a></td></tr>";
+	echo "<tr><td>$ID</td><td>$Username</td><td>$Role</td><td>$LastLoginTime</td><td><a href=\"?action=delete-user&ID=$ID\" class=\"btn btn-primary\">$DELETE</a></td></tr>";
 }
 ?>
 </tbody>
