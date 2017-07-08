@@ -9,6 +9,7 @@ require_once("admin-header.php");
 <td>显示名称</td>
 <td>mysql表名称</td>
 <td>表字段json</td>
+<td>可见性</td>
 <td>操作</td>
 </tr>
 </thead>
@@ -21,9 +22,11 @@ while($row=mysql_fetch_array($result)){
 	$Name=$row['Name'];
 	$TN=$row['Table_Name'];
 	$Settings=$row['Settings'];
+	$Viewable=$row['Viewable']?"True":"False";
 	$EDIT="编辑";
 	$DELETE="删除";
-	echo "<tr><td>$ID</td><td>$Name</td><td>$TN</td><td>$Settings</td><td><a href=\"?action=edit-test&ID=$ID\" class=\"btn btn-primary\">$EDIT</a><a href=\"?action=delete-test&ID=$ID\" class=\"btn btn-primary\">$DELETE</a></td></tr>";
+	$EDITVIEW="更改可见性";
+	echo "<tr><td>$ID</td><td>$Name</td><td>$TN</td><td>$Settings</td><td>$Viewable</td><td><a href=\"?action=edit-test&ID=$ID\" class=\"btn btn-primary\">$EDIT</a><a href=\"?action=edit-viewable&ID=$ID\" class=\"btn btn-primary\">$EDITVIEW</a><a href=\"?action=delete-test&ID=$ID\" class=\"btn btn-primary\">$DELETE</a></td></tr>";
 }
 ?>
 </tbody>
