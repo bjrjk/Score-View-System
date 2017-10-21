@@ -1,5 +1,17 @@
 <?php
 require_once("header.php");
+$sql_403="select * from settings where `Name`='Forbidden'";
+$result_403=mysql_query($sql_403,$conn);
+$flag403=true;
+if($row=mysql_fetch_array($result_403)){
+	if($row['Value']==='0'){
+		$flag403=false;
+	}
+}
+if($flag403){
+	echo "<center><h1>403 Forbidden</h1></center>\n</body>\n </html>";
+	exit();
+}
 $sql="select * from score_table_list where `Viewable`=1 order by ID DESC;";
 $result=mysql_query($sql,$conn);
 $sql2="select * from settings where `Name`='ID_Length';";
