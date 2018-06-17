@@ -13,7 +13,7 @@ $result=mysql_query($sql,$conn);
 while($row=mysql_fetch_array($result)){
 	$ID=$row['ID'];
 	$test=$row['Name'];
-	echo "<option value=\"$ID\">$test</option>\n";
+	echo "<option value=\"$ID\">$ID.$test</option>\n";
 }
 ?>
 </select>

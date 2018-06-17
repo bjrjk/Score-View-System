@@ -14,7 +14,7 @@ require_once("admin-header.php");
 </thead>
 <tbody>
 <?php
-$sql="select * from user;";
+$sql="select * from user order by `ID` asc;";
 $result=mysql_query($sql,$conn);
 while($row=mysql_fetch_array($result)){
 	$ID=$row['ID'];
